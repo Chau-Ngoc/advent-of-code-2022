@@ -1,0 +1,25 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+      - id: black
+        args:
+          - --line-length
+          - "80"
+          - --preview
+        verbose: true
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+        verbose: true
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.7.1
+    hooks:
+      - id: prettier
+        args:
+          - --print-width
+          - "120"
+          - --tab-width
+          - "2"
+        verbose: true
