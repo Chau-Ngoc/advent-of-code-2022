@@ -1,15 +1,7 @@
-with open("input.txt", "r") as file:
-    input_content = file.readlines()
+from utils import extract_text_lines_from_file, str_to_int
 
-
+input_content = extract_text_lines_from_file("input.txt")
 input_content = list(map(lambda x: x.strip(), input_content))
-
-
-def str_to_int(value):
-    try:
-        return int(value)
-    except ValueError:
-        return None
 
 
 calories = map(str_to_int, input_content)
