@@ -13,7 +13,7 @@ def main(buffer, expected_length):
     for index, char in enumerate(buffer[0]):
         if char in result:
             char_location = find_char_position(result, char)
-            result = result[char_location + 1:]
+            result = result[char_location + 1 :]
             result += char
             continue
 
