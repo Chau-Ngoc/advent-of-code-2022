@@ -1,4 +1,22 @@
+import re
+
 from utils import extract_text_lines_from_file
+
+
+class ElvesGroup:
+    pattern = re.compile(r"(\w+),(\w+),(\w+)")
+
+    def __init__(self, rucksacks: str):
+        self.rucksacks = rucksacks
+
+    def find_badge(self):
+        match = self.pattern.match(self.rucksacks)
+        groups = match.groups()
+
+        for item in groups[0]:
+            if item in groups[1] and item in groups[2]:
+                return item
+
 
 priorities = {
     "a": 1,
