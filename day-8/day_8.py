@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from utils import extract_text_lines_from_file
 
 
@@ -15,7 +17,8 @@ def create_rows_of_trees(forest):
     return rows_of_trees
 
 
-input_content = map(str.strip, extract_text_lines_from_file("input.txt"))
+input_file = Path(__file__).parent / "input.txt"
+input_content = map(str.strip, extract_text_lines_from_file(input_file))
 
 grid = create_rows_of_trees(input_content)
 

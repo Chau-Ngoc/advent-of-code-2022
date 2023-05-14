@@ -1,10 +1,12 @@
 import re
+from pathlib import Path
 
 from utils import extract_text_lines_from_file
 
 pattern = re.compile(r"move (\d+) from (\d+) to (\d+)")
 
-input_content = extract_text_lines_from_file("input.txt")
+input_file = Path(__file__).parent / "input.txt"
+input_content = extract_text_lines_from_file(input_file)
 input_content = map(str.strip, input_content)
 
 stack_1 = ["N", "B", "D", "T", "V", "G", "Z", "J"]

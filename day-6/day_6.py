@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from utils import extract_text_lines_from_file
 
 
@@ -24,6 +26,7 @@ def main(buffer, expected_length):
             break
 
 
-input_content = extract_text_lines_from_file("input.txt")
+input_file = Path(__file__).parent / "input.txt"
+input_content = extract_text_lines_from_file(input_file)
 
 main(input_content, 4)

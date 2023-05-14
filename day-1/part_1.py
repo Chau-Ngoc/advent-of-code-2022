@@ -1,6 +1,9 @@
+from pathlib import Path
+
 from utils import extract_text_lines_from_file, str_to_int
 
-input_content = extract_text_lines_from_file("input.txt")
+input_file = Path(__file__).parent / "input.txt"
+input_content = extract_text_lines_from_file(input_file)
 input_content = list(map(lambda x: x.strip(), input_content))
 
 

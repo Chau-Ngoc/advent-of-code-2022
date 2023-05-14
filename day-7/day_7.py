@@ -1,6 +1,7 @@
 import json
 import re
 from functools import reduce
+from pathlib import Path
 
 from utils import extract_text_lines_from_file
 
@@ -20,7 +21,8 @@ class Directory:
         self.size += size
 
 
-input_content = map(str.strip, extract_text_lines_from_file("input.txt"))
+input_file = Path(__file__).parent / "input.txt"
+input_content = map(str.strip, extract_text_lines_from_file(input_file))
 
 cd_pattern = re.compile(r"\$ cd ([\w/.]+)")
 file_pattern = re.compile(r"(\d+) [\w.]+")
